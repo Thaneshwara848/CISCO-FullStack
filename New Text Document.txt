@@ -1,0 +1,35 @@
+
+		Software 
+				check if its already Installed 
+								----> good to Continue 
+				if not We have to download 
+
+	Vs Code---Development			: https://code.visualstudio.com/download
+	Python latest				: https://www.python.org/downloads/ 
+	API testing Postman(Download) , Swagger	: https://www.postman.com/downloads/  
+	MYSQL ---to Store the Records 		: https://dev.mysql.com/downloads/installer/
+	 
+		
+
+basic Python 
+condation/ loos ,Data Types
+OOPs : 
+inheritance
+Poly
+Abstraction
+Encpupulation 
+
+
+Access Mofiers; 
+Public 
+privte
+proteted
+
+non Access Modifier : 
+Static 
+Abstratc 
+final 
+
+ExcptionHandling 
+Collection:
+LIST , SET , DIST,Tuple

@@ -1,0 +1,104 @@
+Devops Life Cycle 
+
+		Amezon/Facebook/etc....!
+1 ) PLAN 
+		: Jira Azure Dashboards  
+2 ) CODE  	
+		: SCM --- git / git hub
+3 ) BUILD 
+		: Maven / Gradle 
+4 ) TEST 	
+		: Junit , Selenium  
+
+5 ) RELESE 
+		: Jenkins , GitHub Actions 
+
+6 ) DEPLOYE 	
+		: Docker , Kubernetes 
+
+7) Operate 	
+		: Ansible , etc..!
+
+8) Monitor
+		: Grafana , etc...!
+
+===========================================================================================
+
+				WRITE A SHORT NOTE ON BELOW TERMS 
+						Agile Methodology 
+	Terms 				Meaning 
+1) Agile 				:
+2) Scrum				:managing scrum call 
+3) Sprint 				: 1-2 , 2-3  3-4 week
+4) iteration 				: 1(1-2 week) , 2(1-2 weeks) ,3(1-2 week)  4, 
+5) user Story 				:task
+6) Epic					:
+7) Story point 				: estimate of the effort , complexity , how much time will take to compely : task 
+8) Acceptance Criteria  		 : condition that must be satisfied for a  user story to be accepted 
+
+--------------------------------------------------------------------------
+			SCRUM 
+Scrum Roles : what they do  ?
+	Terms					: Responsibility  
+	PO : product Owner 			: managing the product( get the req and guiding to the team  ) 
+	SM : Scrum master 			: 
+	Developers 				:
+	Stakeholder 				:
+------------------------------------------------------------------------------
+		Scrum Event : 
+	terms 						Purpose 
+Sprint Planning 				:
+Daily Scrum 					:
+Sprint  Review 					:
+Sprint Retrospective 				:
+Spring Backlogs					:
+Sprint Goal 					:
+
+DOD: Definition  of DONE 
+
+
+
+
+
+1 year : 
+		1 : 100 stories :1 iteration  : 
+							how to achive 100 stories : 
+							those 100 stories we call as sprint backlogs :
+							Spring is of 2 week : 
+								day 1 : sprint plan 
+									Daily Scrum : what i have done today / doing
+									spring Review : they will validate the task  
+								 	Sprint Retor : what went well / wrong in the current sprint 
+		2 : 150 stories  :2 iteration 
+  		3 : 300 stories :3 iteration 
+		4
+		5 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Agile
