@@ -1,16 +1,11 @@
 
 		Software 
-				check if its already Installed 
-								----> good to Continue 
-				if not We have to download 
-
+				
 	Vs Code---Development			: https://code.visualstudio.com/download
 	Python latest				: https://www.python.org/downloads/ 
 	API testing Postman(Download) , Swagger	: https://www.postman.com/downloads/  
 	MYSQL ---to Store the Records 		: https://dev.mysql.com/downloads/installer/
 	 
-		
-
 basic Python 
 condation/ loos ,Data Types
 OOPs : 
@@ -33,3 +28,86 @@ final
 ExcptionHandling 
 Collection:
 LIST , SET , DIST,Tuple
+			
+				
+-----------------------------------------------------------------
+Three basic Permission ....!
+
+permission 		Symbol 
+	
+Read 			r		-r
+Write 			w 		-w 
+Execute			x		+x
+
+		
+--------------------------------------------------------------------
+Command 			meaning 
+
+
+chmod +x file.sh		Add the Execute Permission 
+-----------------------------------------------------------------------
+OwnerShip : 
+
+
+u ------------ user(owner)
+g -----------Group
+o------------ Others
+
+
+chmod u+x Thanesh.txt		: Add execute for Owner
+
+
+var 1=100
+
+echo 			: print data / line 
+echo 
+
+
+
+
+
+
+
+1 ) navigation & file :  pwd , ls , cd , mkdir , rmdir , cp , mv, cat , head, tail , find 
+			
+				create file . revove 
+				create folder , remolder 
+				move 
+				rename 
+
+
+2 ) permission  	, x , w, r , whoim , id , printenv , evn , echo , 		
+			read 
+					add / remove
+			write 
+				add / removr 
+			excute 
+
+
+3 ) process 		:  ps top , kill , grep , free , uptime 
+		ps 
+		kill 
+		stop 
+		
+4 ) text Seach , Pipe, Redirection 
+
+
+
+5 ) shell Scripting 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
