@@ -5,6 +5,7 @@
 	Python latest				: https://www.python.org/downloads/ 
 	API testing Postman(Download) , Swagger	: https://www.postman.com/downloads/  
 	MYSQL ---to Store the Records 		: https://dev.mysql.com/downloads/installer/
+
 	 
 basic Python 
 condation/ loos ,Data Types
@@ -25,11 +26,66 @@ Static
 Abstratc 
 final 
 
-ExcptionHandling 
-Collection:
-LIST , SET , DIST,Tuple
+
+
+
+
+
+Class & Object , Attributes , 
+	Self , 
+	Method 
+	constructors...!
+	 
+
+Exception Handling 
+
+Collection: Data Types 
+
+LIST , SET , DIST, Tuple
+
+API
+		FAST APIS 
+
+
+					LUNCH break from 1  to 2 : 
 			
 				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -----------------------------------------------------------------
 Three basic Permission ....!
 
