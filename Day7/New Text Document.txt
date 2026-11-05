@@ -1,0 +1,24 @@
+
+
+
+
+
+Rest Api using Fast Api 
+FAST APis : 	
+		just we have developed the APis , no excpetion , no validation, no Security , no testing 
+		http method : GET , POST , PUT , DELETE , patch 
+
+		Implemented the Exception Handling 
+			Goble Exception handling 		: bug Free Application 
+				Error Status Code : 
+					200 , 201 , 400 , 404 , 500
+
+		Validation : 	we added the Restriction before sending the data 
+				Pydentic , Field , base Model 
+				ID , NAMER , AGE , SALARY , DESIG 
+		
+
+Create Simple EMployee Management Application using Python Fast APi with
+	 MYSQL  ( user name is root , password is roo , localhost , with DB as CISCO )
+	using FastApi , with Exception handling , and valiadtion also 
+		Employee can have id , name  age ,Salary , Desig 	 

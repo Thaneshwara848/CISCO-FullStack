@@ -38,32 +38,90 @@ Class & Object , Attributes ,
 	 
 
 Exception Handling 
-
 Collection: Data Types 
-
 LIST , SET , DIST, Tuple
+Python with MYSQL 		
+		
 
-API
-		FAST APIS 
-
-
-					LUNCH break from 1  to 2 : 
+					1 ) NOtes is Available in GIT HUB + LMS + Ref Book 
+					2 ) Task : 
+						Home Work : Banking management  
+----------------------------------------------------------------------------
+FAST API project : 
+			API DEV 			: Python with Fast API lib  : fastapi we have to install 
+			API TEST 			: Postman / Swagger  
+			RUN ON SERVER 			: http -----> UviCorn ( run the fastApi app as a web Server ) 
 			
+
+	if we want to work in Fast Api project : 
+				 pip install fastapi  uvicorn
+			
+-----------------------------------------------------------------------------------
+Fast API 
+		14-15 APis we created 
+		complet CRUD 
+		we tested in Postman and Swagger also 
+
+
+
+				TASK : Product management System : 
+					build 8-10 API'S 			be ready to Share the SCREEN ( keep it execute in your System  ) 
+					
+									Quickly Revise in 5 minutes 
+
+		ID 		: 100		100:but not recommended insert the duplicate records 
+		NAME 		: SURESH	can not be blank / name must be min 2 char / name must be max 20 char/ name must contain only char no num , no alph
+		AGE 		:50		must be between 18 to 69 , age can not be less the 18 / o / negative 
+		SALARY 		:50000		must be >= 25000
+		DESIG 		:MANAGER       must be string 
+
+
+FAST API 
+	Plain APis we have created 		: just it will as it is , no exception , no validation  no security , no testing : bugfree 
+
+	No exception---Global Exception 	: 
+	No validation
+	No Security 
+	No Testing
+			But yes we have tested APis using postman / Swagger 
+			bUT NOT any Functional testing ? 
 				
 
 
 
 
+TASK! 	:  30 minutes 
+
+Simple CRUD APIs using Python LIST.
+	with Global Exception Handling and Pydantic Validation.
+
+
+class Employee(BaseModel):
+    id: int
+    name: str
+    age: int
+    salary: float
+    desig: str
 
 
 
 
 
 
+Employee Management System — 10 REST API Endpoints
 
+#	HTTP Method	API Endpoint		Description
 
-
-
+1	GET	/				Welcome message
+2	POST	/addEmployee			Add new employee
+3	GET	/getAllEmployees		Get all employees
+4	GET	/employeeByID/{id}		Search employee by ID
+5	GET	/employeeByName/{name}		Search employee by name
+6	GET	/employeeByDesignation/{desig}	Get employees by designation
+7	PUT	/updateEmployee/{id}		Update complete employee details
+8	PATCH	/updateSalary/{id}		Update employee salary
+9	DELETE	/deleteEmployee/{id}		Delete employee by ID
+10	DELETE	/deleteAllEmployees		Delete all employees
 
 
 
