@@ -1,0 +1,747 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Employee Management System</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+h1 {
+    text-align: center;
+    margin: 0 0 20px;
+}
+
+.dashboard {
+    max-width: 1400px;
+    margin: auto;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    padding: 15px 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #0001;
+}
+
+.stat-card h2 {
+    margin: 8px 0 0;
+    color: #2563eb;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #0001;
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-top: 12px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: 2px solid #93c5fd;
+    border-color: #2563eb;
+}
+
+button {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    background: #2563eb;
+    font-weight: bold;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-green {
+    background: #16a34a;
+}
+
+.btn-red {
+    background: #dc2626;
+}
+
+.btn-gray {
+    background: #64748b;
+}
+
+.btn-orange {
+    background: #ea580c;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.actions button {
+    flex: 1;
+}
+
+.table-top {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.table-top input {
+    margin: 0;
+    flex: 1;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th {
+    background: #1e40af;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+td {
+    padding: 11px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+tr:hover {
+    background: #f8fafc;
+}
+
+td button {
+    padding: 7px 10px;
+    margin: 2px;
+}
+
+#message {
+    display: none;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.success {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.empty {
+    text-align: center;
+    color: #64748b;
+    padding: 20px;
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .table-top {
+        flex-wrap: wrap;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <h1>Employee Management System</h1>
+
+    <!-- Dashboard Cards -->
+    <div class="stats">
+
+        <div class="stat-card">
+            <div>Total Employees</div>
+            <h2 id="totalEmployees">0</h2>
+        </div>
+
+        <div class="stat-card">
+            <div>Database</div>
+            <h2>CISCO</h2>
+        </div>
+
+    </div>
+
+    <!-- Messages -->
+    <div id="message" role="alert"></div>
+
+    <div class="container">
+
+        <!-- LEFT SIDE: EMPLOYEE FORM -->
+        <div class="card">
+
+            <h2 id="formTitle">Add Employee</h2>
+
+            <form id="employeeForm">
+
+                <label>Employee ID</label>
+                <input
+                    type="number"
+                    id="empId"
+                    min="1"
+                    step="1"
+                    placeholder="Enter ID"
+                    required
+                >
+
+                <label>Employee Name</label>
+                <input
+                    type="text"
+                    id="empName"
+                    minlength="3"
+                    maxlength="30"
+                    placeholder="Enter name"
+                    required
+                >
+
+                <label>Age</label>
+                <input
+                    type="number"
+                    id="empAge"
+                    min="18"
+                    max="60"
+                    step="1"
+                    placeholder="Enter age"
+                    required
+                >
+
+                <label>Salary</label>
+                <input
+                    type="number"
+                    id="empSalary"
+                    min="25000"
+                    step="any"
+                    placeholder="Enter salary"
+                    required
+                >
+
+                <label>Designation</label>
+                <input
+                    type="text"
+                    id="empDesig"
+                    maxlength="50"
+                    placeholder="Enter designation"
+                    required
+                >
+
+                <div class="actions">
+
+                    <button
+                        type="submit"
+                        class="btn-green"
+                        id="saveBtn"
+                    >
+                        Add Employee
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn-gray"
+                        onclick="clearForm()"
+                    >
+                        Clear
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+        <!-- RIGHT SIDE: EMPLOYEE TABLE -->
+        <div class="card">
+
+            <h2>Employee List</h2>
+
+            <div class="table-top">
+
+                <input
+                    type="text"
+                    id="searchName"
+                    placeholder="Search by employee name"
+                    oninput="searchEmployees()"
+                >
+
+                <button onclick="loadEmployees()">
+                    Refresh
+                </button>
+
+            </div>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Salary</th>
+                            <th>Designation</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="employeeTable">
+                        <tr>
+                            <td colspan="6" class="empty">
+                                Loading employees...
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+// Backend and frontend use the same origin.
+const API = window.location.origin;
+
+let editingId = null;
+let searchVersion = 0;
+
+const form = document.getElementById("employeeForm");
+
+
+// STEP 1: Show Success / Error Messages
+function showMessage(text, type = "success") {
+
+    const msg = document.getElementById("message");
+
+    msg.textContent = text;
+    msg.className = type;
+    msg.style.display = "block";
+}
+
+
+// STEP 2: Handle API Responses
+async function apiRequest(url, options = {}) {
+
+    let response;
+
+    try {
+        response = await fetch(API + url, options);
+    } catch (error) {
+        throw new Error("Cannot connect to FastAPI server");
+    }
+
+    const data = await response.json();
+
+    if (!response.ok) {
+
+        let errorMessage = data.message || data.detail;
+
+        // Show Pydantic validation errors
+        if (data.errors && data.errors.length > 0) {
+            errorMessage = data.errors
+                .map(e => e.field + ": " + e.message)
+                .join("; ");
+        }
+
+        throw new Error(errorMessage || "API request failed");
+    }
+
+    return data;
+}
+
+
+// STEP 3: Read Employee Form Data
+function getFormData() {
+
+    return {
+        id: Number(document.getElementById("empId").value),
+
+        name: document.getElementById("empName").value.trim(),
+
+        age: Number(document.getElementById("empAge").value),
+
+        salary: Number(document.getElementById("empSalary").value),
+
+        desig: document.getElementById("empDesig").value.trim()
+    };
+}
+
+
+// STEP 4: Save / Update Employee
+form.addEventListener("submit", async function(event) {
+
+    event.preventDefault();
+
+    const employee = getFormData();
+    const saveBtn = document.getElementById("saveBtn");
+
+    // Client-side validation
+    if (employee.name.length < 3) {
+        showMessage("Name must have at least 3 characters", "error");
+        return;
+    }
+
+    if (!employee.desig) {
+        showMessage("Designation cannot be blank", "error");
+        return;
+    }
+
+    saveBtn.disabled = true;
+
+    try {
+
+        let url;
+        let method;
+        let body;
+
+        if (editingId === null) {
+
+            // CREATE
+            url = "/addEmployee";
+            method = "POST";
+            body = employee;
+
+        } else {
+
+            // UPDATE
+            url = "/updateEmployee/" + editingId;
+            method = "PUT";
+
+            body = {
+                name: employee.name,
+                age: employee.age,
+                salary: employee.salary,
+                desig: employee.desig
+            };
+        }
+
+        const result = await apiRequest(url, {
+            method: method,
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body)
+        });
+
+        clearForm();
+
+        showMessage(result.message);
+
+        document.getElementById("searchName").value = "";
+
+        await loadEmployees();
+
+    } catch (error) {
+
+        showMessage(error.message, "error");
+
+    } finally {
+
+        saveBtn.disabled = false;
+    }
+
+});
+
+
+// STEP 5: Get All Employees
+async function loadEmployees() {
+
+    // Invalidate any pending search
+    const version = ++searchVersion;
+
+    try {
+
+        const employees = await apiRequest("/getAllEmployees");
+
+        if (version === searchVersion) {
+            displayEmployees(employees);
+        }
+
+        await loadEmployeeCount();
+
+    } catch (error) {
+
+        showMessage(error.message, "error");
+    }
+
+}
+
+
+// STEP 6: Display Employees in Table
+function displayEmployees(employees) {
+
+    const tbody = document.getElementById("employeeTable");
+
+    tbody.innerHTML = "";
+
+    if (employees.length === 0) {
+
+        const row = tbody.insertRow();
+        const cell = row.insertCell();
+
+        cell.colSpan = 6;
+        cell.className = "empty";
+        cell.textContent = "No Employees Found";
+
+        return;
+    }
+
+    employees.forEach(emp => {
+
+        const row = tbody.insertRow();
+
+        // textContent avoids interpreting database values as HTML.
+        const values = [
+            emp.id,
+            emp.name,
+            emp.age,
+            emp.salary,
+            emp.desig
+        ];
+
+        values.forEach(value => {
+
+            const cell = row.insertCell();
+            cell.textContent = value;
+
+        });
+
+        // Action buttons
+        const actionCell = row.insertCell();
+
+        const editBtn = document.createElement("button");
+        editBtn.textContent = "Edit";
+        editBtn.className = "btn-orange";
+        editBtn.onclick = () => editEmployee(emp);
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Delete";
+        deleteBtn.className = "btn-red";
+        deleteBtn.onclick = () => deleteEmployee(emp.id);
+
+        actionCell.append(editBtn, deleteBtn);
+
+    });
+
+}
+
+
+// STEP 7: Edit Employee
+function editEmployee(emp) {
+
+    editingId = emp.id;
+
+    document.getElementById("empId").value = emp.id;
+    document.getElementById("empName").value = emp.name;
+    document.getElementById("empAge").value = emp.age;
+    document.getElementById("empSalary").value = emp.salary;
+    document.getElementById("empDesig").value = emp.desig;
+
+    // ID is not editable during UPDATE
+    document.getElementById("empId").readOnly = true;
+
+    document.getElementById("formTitle").textContent =
+        "Update Employee";
+
+    document.getElementById("saveBtn").textContent =
+        "Update Employee";
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+}
+
+
+// STEP 8: Delete Employee
+async function deleteEmployee(id) {
+
+    const confirmed = confirm(
+        "Are you sure you want to delete Employee ID " + id + "?"
+    );
+
+    if (!confirmed) return;
+
+    try {
+
+        const result = await apiRequest(
+            "/deleteEmployee/" + id,
+            { method: "DELETE" }
+        );
+
+        if (editingId === id) {
+            clearForm();
+        }
+
+        showMessage(result.message);
+
+        document.getElementById("searchName").value = "";
+
+        await loadEmployees();
+
+    } catch (error) {
+
+        showMessage(error.message, "error");
+    }
+
+}
+
+
+// STEP 9: Search Employees
+async function searchEmployees() {
+
+    const name = document.getElementById("searchName")
+        .value.trim();
+
+    if (!name) {
+        await loadEmployees();
+        return;
+    }
+
+    const version = ++searchVersion;
+
+    try {
+
+        const employees = await apiRequest(
+            "/searchEmployees/" + encodeURIComponent(name)
+        );
+
+        // Ignore old search responses
+        if (version === searchVersion) {
+            displayEmployees(employees);
+        }
+
+    } catch (error) {
+
+        if (version === searchVersion) {
+            showMessage(error.message, "error");
+        }
+    }
+
+}
+
+
+// STEP 10: Employee Count
+async function loadEmployeeCount() {
+
+    try {
+
+        const result = await apiRequest("/employeeCount");
+
+        document.getElementById("totalEmployees").textContent =
+            result.totalEmployees;
+
+    } catch (error) {
+
+        showMessage(error.message, "error");
+    }
+
+}
+
+
+// STEP 11: Clear Form
+function clearForm() {
+
+    form.reset();
+
+    editingId = null;
+
+    document.getElementById("empId").readOnly = false;
+
+    document.getElementById("formTitle").textContent =
+        "Add Employee";
+
+    document.getElementById("saveBtn").textContent =
+        "Add Employee";
+}
+
+
+// STEP 12: Load Data on Page Open
+loadEmployees();
+
+</script>
+
+</body>
+</html>

@@ -7,6 +7,8 @@ from dotenv import load_dotenv
 import mysql.connector
 import os
 import logging
+from fastapi.responses import FileResponse
+from pathlib import Path
 
 # STEP 1: Create FastAPI Application
 app = FastAPI(title="Employee Management API")
@@ -114,10 +116,12 @@ async def general_error(request: Request, exc: Exception):
     )
 
 
-# API 1: Home
-@app.get("/")
-def home():
-    return {"message": "Welcome to Employee Management"}
+
+# API 9: Serve Frontend
+@app.get("/", include_in_schema=False)
+def dashboard():
+    html_file = Path(__file__).resolve().parent / "index.html"
+    return FileResponse(html_file)
 
 
 # API 2: Add Employee
